@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Joe's Hotdog Stand</title>    
+</head>
+        
+<body>
+    <h1 style="text-align: center; color: #ff6600">Welcome to Joe's Hotdog Stand!</h1>
+    <h2 style="text-align: center">Hotdogs: $3.25 ..... French Fries: $2.00 
+        ..... Sodas: $1.50</h2>
+    
+    <img style="max-height: 285px; float:right; margin-right: 20px"    
+    src="https://lh3.googleusercontent.com/proxy/LKCyEJSpexaxtPlq6Z__8UZm7pGTZ28o3n2L7V07sG2p_7agoq8HlEAAUpzGebKDD8qXRDhCo2DaxbbIAoPolU1DXHvhj1jtBL_Q9YTkTXtx"
+    alt="a picture of a soda">
+    
+    <img style="max-width: 350px; float:right; margin-right: 200px"
+    src="https://us.123rf.com/450wm/venski/venski1802/venski180200001/96204698-stock-vector-classic-hot-dog-with-ketchup-and-mustard-isolated-vector-illustration-.jpg?ver=6"
+    alt="a picture of a hotdog">    
+    
+    <script language="javascript">        
+        numHotdogs = prompt("How many hotdogs would you like?");
+        numFries = prompt("How many fries would you like?");
+        numSodas = prompt("How many sodas would you like?");
+        
+        costHotdogs = numHotdogs * 3.25;
+        costFries = numFries * 2.00;
+        costSodas = numSodas * 1.50;
+        subtotal = (costHotdogs + costFries + costSodas).toFixed(2);       
+        
+        
+        if (numHotdogs == 1) {
+            document.write("You ordered " + numHotdogs + " hotdog.");
+        } 
+        else {
+            document.write("You ordered " + numHotdogs + " hotdogs.");
+        }
+        document.write("<br>");
+        if (numFries == 1) {
+            document.write("You ordered " + numFries + " batch of fries.");
+        } 
+        else {
+            document.write("You ordered " + numFries + " fries.");
+        }
+        document.write("<br>");
+        if (numSodas == 1) {
+            document.write("You ordered " + numSodas + " soda.");
+        }
+        else {
+            document.write("You ordered " + numSodas + " sodas.");
+        }
+        document.write("<br>");
+
+        document.write("Your order's subtotal will be $" + subtotal + ".");
+        
+        document.write("<br>");
+        
+        if (subtotal >= 20.00) {
+            specialDiscount = (subtotal * 0.10).toFixed(2);
+            document.write("Your order qualifies for Joe's special: a 10% discount!"); 
+            document.write(" This means that you saved $" + specialDiscount + "!");       
+        }
+        else {
+            specialDiscount = (0).toFixed(2);
+            document.write("Your order does not qualify for any discounts.");
+        }
+        document.write("<br>");
+        
+        tax = 0.0625;
+        
+        document.write("Tax: " + (tax * 100) + "%");
+        
+        document.write("<br>");
+    
+        total = (subtotal - specialDiscount) * (1 + tax);        
+        document.write("Thus your total for today will be $" + total.toFixed(2) + ", please!");
+    
+    </script>    
+</body>
+
+</html>
+
